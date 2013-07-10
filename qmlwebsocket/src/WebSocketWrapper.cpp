@@ -34,13 +34,8 @@
 
 #include <QtCore/QDebug>
 
-#ifdef _DEBUG 
-#  define DEBUG_LOG qDebug() << __FILE__ << __LINE__ << __FUNCTION__
-#  define WARN_LOG qWarning() << __FILE__ << __LINE__ << __FUNCTION__
-#else
-#  define DEBUG_LOG / ## /
-#  define WARN_LOG / ## / 
-#endif
+#define DEBUG_LOG qDebug() <<__FILE__<<__LINE__<<__FUNCTION__
+#define WARN_LOG qWarning() <<__FILE__<<__LINE__<<__FUNCTION__
 
 using websocketpp::session_ptr;
 

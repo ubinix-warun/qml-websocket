@@ -64,3 +64,6 @@ packages/
 
 !build/
 !obj/
+/!build
+/!obj
+/Makefile

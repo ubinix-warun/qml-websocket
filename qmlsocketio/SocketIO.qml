@@ -24,7 +24,7 @@
   (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
-import QtQuick 1.1
+import QtQuick 2.0
 import WebSocket 1.0
 
 import 'lib/request.js' as Request

@@ -5,7 +5,7 @@ isEmpty(_boostRoot){
 
 TEMPLATE = lib
 QT -= core gui
-CONFIG += staticlib
+CONFIG += dll
 
 QMAKE_CFLAGS_RELEASE = -MD
 QMAKE_CFLAGS_DEBUG = -MDd
@@ -25,10 +25,7 @@ CONFIG(release, debug|release) {
 }
 
 DEFINES += \
-    _LIB \
-    _WIN32_WINNT=0x0600 \
-    NOCOMM \
-    WIN32
+    _LIB 
 
 TARGET = $$qtLibraryTarget($$TARGET)
 
@@ -72,8 +69,7 @@ SOURCES += \
     vendor/websocketpp/src/websocket_client.cpp \
     vendor/websocketpp/src/network_utilities.cpp \
     vendor/websocketpp/src/base64/base64.cpp \
-    vendor/websocketpp/src/sha1/shatest.cpp \
-    vendor/websocketpp/src/sha1/shacmp.cpp \
-    vendor/websocketpp/src/sha1/sha1.cpp \
-    vendor/websocketpp/src/sha1/sha.cpp
-
+    vendor/websocketpp/src/sha1/sha1.cpp 
+    #vendor/websocketpp/src/sha1/shatest.cpp \
+    #vendor/websocketpp/src/sha1/shacmp.cpp \
+    #vendor/websocketpp/src/sha1/sha.cpp

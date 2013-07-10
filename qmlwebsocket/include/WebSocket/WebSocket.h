@@ -27,7 +27,8 @@
 #pragma once 
 
 #include <WebSocket/Global.h>
-#include <QtDeclarative/QDeclarativeItem>
+#include <QQuickItem>
+//#include <QtDeclarative/QDeclarativeItem>
 
 class WebSocketWrapper;
 
@@ -36,11 +37,11 @@ class WebSocketWrapper;
 
   \brief A QML Qt wrapper for websocket++'s boost::asio-based websockets.
 */
-class QMLWEBSOCKET_EXPORT WebSocket: public QDeclarativeItem
+class QMLWEBSOCKET_EXPORT WebSocket: public QQuickItem
 {
   Q_OBJECT
 public:
-  explicit WebSocket(QDeclarativeItem *parent = 0); 
+  explicit WebSocket(QQuickItem *parent = 0); 
   virtual ~WebSocket();
   
   Q_INVOKABLE void connect(const QString &uri);

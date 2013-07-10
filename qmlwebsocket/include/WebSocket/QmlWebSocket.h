@@ -27,12 +27,14 @@
 #pragma once
 
 #include <WebSocket/Global.h>
-#include <QtDeclarative/QDeclarativeExtensionPlugin>
+#include <QQmlExtensionPlugin>
+//#include <QtDeclarative/QDeclarativeExtensionPlugin>
 
-class QMLWEBSOCKET_EXPORT QmlWebSocket: public QDeclarativeExtensionPlugin
+class QMLWEBSOCKET_EXPORT QmlWebSocket: public QQmlExtensionPlugin
 {
   Q_OBJECT
+  Q_PLUGIN_METADATA(IID "com.ubinix.qt.websocket" FILE "qmlwebsocket.json")
 public:
   void registerTypes(const char *uri);
-  void initializeEngine(QDeclarativeEngine *engine, const char *uri);
+  void initializeEngine(QQmlEngine *engine, const char *uri);
 };

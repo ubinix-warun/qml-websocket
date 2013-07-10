@@ -4,7 +4,7 @@ isEmpty(_boostRoot){
 }
 
 TEMPLATE = lib
-QT += core gui declarative
+QT += core gui qml quick
 CONFIG += dll
 
 QMAKE_CFLAGS_RELEASE = -MD
@@ -13,21 +13,19 @@ QMAKE_CFLAGS_DEBUG = -MDd
 CONFIG(debug, debug|release) {
     TARGET = qmlwebsocket
     DESTDIR = $$_PRO_FILE_PWD_/!build/qmlwebsocket/debug
-    OBJECTS_DIR = ../../!obj/qmlwebsocket/debug
-    MOC_DIR = ../../!obj/qmlwebsocket/debug
+    OBJECTS_DIR = !obj/qmlwebsocket/debug
+    MOC_DIR = !obj/qmlwebsocket/debug
 }
 
 CONFIG(release, debug|release) {
     TARGET = qmlwebsocket
     DESTDIR = $$_PRO_FILE_PWD_/!build/qmlwebsocket/release
-    OBJECTS_DIR = ../../!obj/qmlwebsocket/release
-    MOC_DIR = ../../!obj/qmlwebsocket/release
+    OBJECTS_DIR = !obj/qmlwebsocket/release
+    MOC_DIR = !obj/qmlwebsocket/release
 }
 
 DEFINES += \
-    QMLWEBSOCKET_LIB \
-    _WIN32_WINNT=0x0600 \
-    WIN32
+    QMLWEBSOCKET_LIB
 
 TARGET = $$qtLibraryTarget($$TARGET)
 uri = com.mycompany.qmlcomponents
@@ -46,8 +44,8 @@ win32 {
 }
 
 LIBS += \
-    -L$$_boostRoot/stage/lib \
-    -l$$_PRO_FILE_PWD_/vendor/websocketpp/lib/$$_websocketppLib
+    -L$$_PRO_FILE_PWD_/!build/websocketpp/release/ -lwebsocketpp \
+    -L$$_boostRoot/debug-stage/lib -lboost_thread -lboost_regex -lboost_system -lboost_random -lboost_date_time -lboost_program_options
 
 # Input
 SOURCES += \

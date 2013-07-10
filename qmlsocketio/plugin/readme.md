@@ -1,1 +1,0 @@
-Put the release file qmlwebsocket.dll here or execute install.bat from project root.

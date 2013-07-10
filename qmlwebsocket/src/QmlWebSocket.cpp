@@ -27,7 +27,7 @@
 #include <WebSocket/QmlWebSocket.h>
 #include <WebSocket/WebSocket.h>
 
-#include <QDeclarativeEngine>
+//#include <QDeclarativeEngine>
 #include <QDebug>
 
 void QmlWebSocket::registerTypes(const char *uri)
@@ -35,12 +35,12 @@ void QmlWebSocket::registerTypes(const char *uri)
   qmlRegisterType<WebSocket>("WebSocket", 1, 0, "WebSocket");
 }
 
-void QmlWebSocket::initializeEngine(QDeclarativeEngine *engine, const char *uri)
+void QmlWebSocket::initializeEngine(QQmlEngine *engine, const char *uri)
 {
 }
 
-#ifdef _DEBUG
-  Q_EXPORT_PLUGIN2(QMLWebSocketd, QmlWebSocket);
-#else
-  Q_EXPORT_PLUGIN2(QMLWebSocket, QmlWebSocket);
-#endif
+//#ifdef _DEBUG
+ // Q_EXPORT_PLUGIN2(QMLWebSocketd, QmlWebSocket);
+//#else
+ // Q_EXPORT_PLUGIN2(QMLWebSocket, QmlWebSocket);
+//#endif

@@ -29,7 +29,7 @@
 
 #define SIGNAL_CONNECT_CHECK(X) { bool result = X; Q_ASSERT_X(result, __FUNCTION__ , #X); }
 
-WebSocket::WebSocket(QDeclarativeItem *parent /*= 0*/) : QDeclarativeItem(parent)
+WebSocket::WebSocket(QQuickItem *parent /*= 0*/) : QQuickItem(parent)
 {
 }
 
